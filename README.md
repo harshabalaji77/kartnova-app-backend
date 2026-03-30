@@ -1,29 +1,12 @@
-<div align="center">
+## Kartnova - Backend API
 
-# Kartnova - Backend API
-
-</div>
-
-<div align="center">
-
-![Kartnova Logo](https://img.shields.io/badge/Kartnova-E--Commerce-blue?style=for-the-badge)
-
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.2-brightgreen?style=flat-square&logo=spring-boot)
-![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square&logo=java)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=flat-square&logo=mysql)
-![Maven](https://img.shields.io/badge/Maven-3.6+-red?style=flat-square&logo=apache-maven)
-
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)](https://github.com/yourusername/kartnova/actions)
-
-</div>
-
-## 📋 Overview
+### 📋 Overview
 
 **Kartnova** is a comprehensive e-commerce backend API built with Spring Boot that provides a complete shopping platform solution. It handles product management, user authentication, shopping cart functionality, order processing, and payment integration with Razorpay.
 
-## 🚀 Features
+### 🚀 Features
 
-### Core Functionality
+#### Core Functionality
 - **Product Management**: Browse, search, and filter products by category
 - **User Authentication**: Secure JWT-based authentication and authorization
 - **Shopping Cart**: Add/remove items, update quantities
@@ -31,14 +14,14 @@
 - **Payment Integration**: Razorpay payment gateway integration
 - **Admin Dashboard**: Administrative controls for products, users, and orders
 
-### Technical Features
+#### Technical Features
 - **RESTful API**: Clean and well-documented REST endpoints
 - **Security**: JWT token-based authentication with Spring Security
 - **Database Integration**: JPA/Hibernate with MySQL
 - **Cross-Origin Support**: CORS configuration for frontend integration
 - **Real-time Updates**: Spring Boot DevTools for development
 
-## 🛠️ Technology Stack
+### 🛠️ Technology Stack
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
@@ -51,7 +34,7 @@
 | **Razorpay** | 1.4.8 | Payment gateway |
 | **Maven** | 3.6+ | Build tool |
 
-## 📁 Project Structure
+### 📁 Project Structure
 
 ```
 Kartnova/
@@ -74,15 +57,15 @@ Kartnova/
 └── pom.xml                       # Maven dependencies
 ```
 
-## 🚀 Quick Start
+### 🚀 Quick Start
 
-### Prerequisites
+#### Prerequisites
 - **Java 17** or higher
 - **Maven 3.6+**
 - **MySQL 8.0+**
 - **Git**
 
-### Installation
+#### Installation
 
 1. **Clone the repository**
    ```bash
@@ -126,9 +109,9 @@ Kartnova/
    - Base URL: `http://localhost:8080`
    - API endpoints: `http://localhost:8080/api/*`
 
-## 📚 API Documentation
+### 📚 API Documentation
 
-### Authentication Endpoints
+#### Authentication Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -136,7 +119,7 @@ Kartnova/
 | POST | `/api/auth/login` | User login |
 | POST | `/api/auth/logout` | User logout |
 
-### Product Endpoints
+#### Product Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -144,7 +127,7 @@ Kartnova/
 | GET | `/api/products/{id}` | Get product details |
 | GET | `/api/products/search` | Search products |
 
-### Cart Endpoints
+#### Cart Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -153,7 +136,7 @@ Kartnova/
 | PUT | `/api/cart/update` | Update cart item |
 | DELETE | `/api/cart/remove/{id}` | Remove item from cart |
 
-### Order Endpoints
+#### Order Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -161,14 +144,14 @@ Kartnova/
 | POST | `/api/orders/place` | Place new order |
 | GET | `/api/orders/{id}` | Get order details |
 
-### Payment Endpoints
+#### Payment Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/payment/create-order` | Create Razorpay order |
 | POST | `/api/payment/verify` | Verify payment |
 
-### Admin Endpoints
+#### Admin Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -177,9 +160,9 @@ Kartnova/
 | PUT | `/api/admin/products/{id}` | Update product |
 | DELETE | `/api/admin/products/{id}` | Delete product |
 
-## 🔧 Configuration
+### 🔧 Configuration
 
-### Environment Variables
+#### Environment Variables
 
 Create a `.env` file in the root directory:
 
@@ -201,11 +184,11 @@ RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 SERVER_PORT=8080
 ```
 
-### Database Schema
+#### Database Schema
 
 The application uses the following database schema. You can create the tables manually using the SQL queries below or let Hibernate auto-generate them with `spring.jpa.hibernate.ddl-auto=update`.
 
-#### Core Tables
+##### Core Tables
 
 ```sql
 -- Users table for authentication and user management
@@ -239,7 +222,7 @@ CREATE TABLE categories (
 );
 ```
 
-#### Product Management
+##### Product Management
 
 ```sql
 -- Products catalog
@@ -266,7 +249,7 @@ CREATE TABLE productimages (
 );
 ```
 
-#### Shopping Cart & Orders
+##### Shopping Cart & Orders
 
 ```sql
 -- Shopping cart items
@@ -306,7 +289,7 @@ CREATE TABLE order_items (
 );
 ```
 
-#### Entity Relationships
+##### Entity Relationships
 
 ```
 users (1) ←→ (N) jwt_tokens
@@ -321,9 +304,9 @@ products (1) ←→ (N) order_items
 orders (1) ←→ (N) order_items
 ```
 
-## 🧪 Testing
+### 🧪 Testing
 
-### Running Tests
+#### Running Tests
 
 ```bash
 # Run all tests
@@ -336,14 +319,14 @@ orders (1) ←→ (N) order_items
 ./mvnw test jacoco:report
 ```
 
-### Test Coverage
+#### Test Coverage
 
 - Unit tests for service layers
 - Integration tests for controllers
 - Repository layer testing
 - Security testing
 
-## 🔒 Security Features
+### 🔒 Security Features
 
 - **JWT Authentication**: Stateless token-based authentication
 - **Password Encryption**: BCrypt password hashing
@@ -351,9 +334,9 @@ orders (1) ←→ (N) order_items
 - **CORS Configuration**: Secure cross-origin requests
 - **Input Validation**: Request parameter validation
 
-## 📦 Deployment
+### 📦 Deployment
 
-### Docker Deployment
+#### Docker Deployment
 
 ```dockerfile
 # Dockerfile
@@ -369,7 +352,7 @@ docker build -t kartnova .
 docker run -p 8080:8080 kartnova
 ```
 
-### Production Considerations
+#### Production Considerations
 
 - Use environment variables for sensitive data
 - Enable HTTPS in production
@@ -377,7 +360,7 @@ docker run -p 8080:8080 kartnova
 - Set up proper logging
 - Monitor application performance
 
-## 🤝 Contributing
+### 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -385,64 +368,3 @@ docker run -p 8080:8080 kartnova
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Code Style
-
-- Follow Java coding conventions
-- Use meaningful variable names
-- Add proper Javadoc comments
-- Write unit tests for new features
-
-## 📝 Changelog
-
-### Version 0.0.1-SNAPSHOT
-- Initial release
-- Basic e-commerce functionality
-- JWT authentication
-- Razorpay integration
-- Admin panel
-
-## 🐛 Issues & Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Check MySQL service is running
-   - Verify database credentials
-   - Ensure database exists
-
-2. **JWT Token Issues**
-   - Check JWT secret configuration
-   - Verify token expiration time
-   - Ensure proper token format
-
-3. **CORS Issues**
-   - Verify frontend URL in CORS configuration
-   - Check if credentials are allowed
-
-### Reporting Issues
-
-Please report issues on the [GitHub Issues](https://github.com/yourusername/kartnova/issues) page with:
-
-- Detailed description of the issue
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment details
-
-
-
-## 🙏 Acknowledgments
-
-- [Spring Boot](https://spring.io/projects/spring-boot) - The application framework
-- [Razorpay](https://razorpay.com/) - Payment gateway integration
-- [MySQL](https://www.mysql.com/) - Database solution
-- [JWT](https://jwt.io/) - Authentication tokens
-
----
-
-<div align="center">
-
-**⭐ Star this repository if it helped you!**
-
-Made with ❤️ by [Kartnova Team](https://github.com/yourusername)
-
-</div>
